@@ -521,7 +521,7 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
                 if (options.let_active_afk) {
                     if (localStorage.getItem('customAfkMessage')) {
                         var customAfkMessage = localStorage.getItem('customAfkMessage');
-                        $('#chat-txt-message').val('[AFK] '+customAfkMessage);
+                        $('#chat-txt-message').val(+customAfkMessage);
                     } else {
                         $('#chat-txt-message').val("[AFK] I'm not here right now.");
                     }
@@ -529,7 +529,7 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
                     options.let_active_afk = false;
                     setTimeout(function() {
                         options.let_active_afk = true;
-                    }, 30000);
+                    }, 0.1);
                 }
             }
         },
